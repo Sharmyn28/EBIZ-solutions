@@ -2,13 +2,13 @@ import React from 'react';
 import { Grid, Row, Col, Button, Table } from 'react-bootstrap';
 import SideBar from '../SideBar';
 
-const StudentRecord = () => {
+const StudentRecord = ({name, mark1, mark2}) => {
     return (
         <tr>
             <td>1</td>
-            <td>Name</td>
-            <td><input type='number' placeholder='FirstMark'></input></td>
-            <td><input type='number' placeholder='SecondMark'></input></td>
+            <td>name</td>
+            <td>mark1</td>
+            <td>mark2</td>
         </tr>
     )
 }
@@ -21,6 +21,7 @@ const TableMarks = () => {
                     <th>#</th>
                     <th>Alumnos</th>
                     <th>Nota de Periodo</th>
+                    <th>Promedio</th>
                 </tr>
             </thead>
             <tbody>
