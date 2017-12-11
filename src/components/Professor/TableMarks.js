@@ -5,15 +5,30 @@ import SideBar from '../SideBar';
 const StudentRecord = ({name, mark1, mark2}) => {
     return (
         <tr>
-            <td>1</td>
-            <td>name</td>
-            <td>mark1</td>
-            <td>mark2</td>
+            <td></td>
+            <td>{name}</td>
+            <td>{mark1}</td>
+            <td>{mark2}</td>
+            <td></td>
         </tr>
     )
 }
 
 const TableMarks = () => {
+    const classMarks = bio.map((item) => {
+        return (
+            item.colaborativos.map((e, index) => {
+                return (
+                    <StudentRecord
+                        key={index}
+                        name={e.idStudent}
+                        mark1={e.mark1}
+                        mark2={e.mark2}
+                    />
+                )
+            })
+        )
+    })
     return (
         <Table bordered condensed hover responsive>
             <thead>
@@ -25,9 +40,7 @@ const TableMarks = () => {
                 </tr>
             </thead>
             <tbody>
-                <StudentRecord />
-                <StudentRecord />
-                <StudentRecord />
+                
             </tbody>
         </Table>
     )
