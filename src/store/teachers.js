@@ -16,7 +16,7 @@ const teachers=
       {
         idTeacher:"t00003",
         firstName:"Sofia",
-        last_name:"Palomino Guevara" , 
+        lastName:"Palomino Guevara" , 
         password:"t00003" 
  
     },
