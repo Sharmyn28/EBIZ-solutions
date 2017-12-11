@@ -13,7 +13,6 @@ const initialState =
         firstName: teacher[0].firstName,
         lastName: teacher[0].lastName,
     },
-    registrationCourses: registrationCourses,
     registration: 
     {
         student: registrationCourses[0].idStudent,
