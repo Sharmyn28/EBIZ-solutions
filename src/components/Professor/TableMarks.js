@@ -9,8 +9,8 @@ const StudentRecord = ({ number,name, mark1, mark2 }) => {
         <tr>
             <td>{number}</td>
             <td>{name}</td>
-            <td>{mark1}</td>
-            <td>{mark2}</td>
+            <td contenteditable="true">{mark1}</td>
+            <td contenteditable="true">{mark2}</td>
             <td>{GrandTotal(mark1, mark2)}</td>
         </tr>
     )
