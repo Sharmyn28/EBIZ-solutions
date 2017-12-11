@@ -1,7 +1,7 @@
 import createStore from 'redux-zero';
 import students from "./Students";
 import registrationCourses from "./RegistrationCourses";
-import teacher from "./teachers";
+import teacher from "./Teachers";
 import course from "./Courses";
 
 const initialState = 
@@ -13,7 +13,6 @@ const initialState =
         firstName: teacher[0].firstName,
         lastName: teacher[0].lastName,
     },
-    registrationCourses: registrationCourses,
     registration: 
     {
         student: registrationCourses[0].idStudent,

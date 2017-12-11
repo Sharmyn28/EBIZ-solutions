@@ -2,12 +2,12 @@ import React from 'react';
 import { Grid, Row, Col, Button, Table } from 'react-bootstrap';
 import SideBar from '../SideBar';
 import registrationCourses from '../../store/RegistrationCourses';
-import { GrandTotal } from "../../actions/actions";
+import { GrandTotal, getStudentName } from "../../actions/actions";
 
-const StudentRecord = ({ name, mark1, mark2 }) => {
+const StudentRecord = ({ number,name, mark1, mark2 }) => {
     return (
         <tr>
-            <td></td>
+            <td>{number}</td>
             <td>{name}</td>
             <td>{mark1}</td>
             <td>{mark2}</td>
@@ -21,7 +21,8 @@ const TableMarks = () => {
         return (
             <StudentRecord
                 key={index}
-                name={e.idStudent}
+                number={index+1}
+                name={getStudentName(e.idStudent)}
                 mark1={e.mark1}
                 mark2={e.mark2}
             />
