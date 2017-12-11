@@ -1,15 +1,17 @@
 import createStore from 'redux-zero';
-import students from "./Students"
-import registrationCourses from "./RegistrationCourses"
+import students from "./Students";
+import registrationCourses from "./RegistrationCourses";
+import teacher from "./Teachers";
+import course from "./Courses";
 
 const initialState = 
 {
     successLogin : false,    
     teacher: 
     {
-        id: null,
-        firstName: null,
-        lastName: null,
+        id: teacher[0].idTeacher,
+        firstName: teacher[0].firstName,
+        lastName: teacher[0].lastName,
     },
  };
  

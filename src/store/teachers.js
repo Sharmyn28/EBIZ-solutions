@@ -27,3 +27,4 @@ const teachers=
         password:"t00004"  
     }
 ]
+export default teachers;

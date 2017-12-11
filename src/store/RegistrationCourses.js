@@ -1,4 +1,4 @@
-export const registrationCourses = 
+const registrationCourses = 
 [
     {
         idRegistration: "r00001",
@@ -29,3 +29,5 @@ export const registrationCourses =
         mark2: 16,
     }
 ]
+
+export default registrationCourses;

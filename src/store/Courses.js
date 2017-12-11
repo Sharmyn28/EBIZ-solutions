@@ -1,4 +1,4 @@
-const course=
+const courses =
 [
     {
         idCourse:"c00001",
@@ -21,3 +21,5 @@ const course=
         nameCourse:"Algoritmos"
     }
 ]
+
+export default courses;

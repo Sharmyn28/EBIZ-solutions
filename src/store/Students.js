@@ -1,4 +1,4 @@
-export const students = 
+const students = 
 [
     {
         idStudent: "s00001",
@@ -21,3 +21,5 @@ export const students =
         lastName: "Bravo Herrera",
     }
 ]
+
+export default students;
