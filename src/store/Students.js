@@ -1,4 +1,4 @@
-const students = 
+export const students = 
 [
     {
         idStudent: s00001,

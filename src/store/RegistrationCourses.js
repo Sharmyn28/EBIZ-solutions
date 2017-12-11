@@ -1,4 +1,4 @@
-const registrationCourses = 
+export const registrationCourses = 
 [
     {
         idRegistration: r00001,
