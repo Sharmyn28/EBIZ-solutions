@@ -1,7 +1,7 @@
 import createStore from 'redux-zero';
 import students from "./Students";
 import registrationCourses from "./RegistrationCourses";
-import teacher from "./teachers";
+import teacher from "./Teachers";
 import course from "./Courses";
 
 const initialState = 
