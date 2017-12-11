@@ -1,12 +1,13 @@
-import React from 'react';
-//import './App.css';
+import store from '../store/store';
 
-
-const Home = () =>{
-    return(
-        <div>
-        </div>
-    )
+export const GrandTotal = (mark1, mark2) => {
+    let totalMark = ((mark1 + mark2)/2);
+    console.log(GrandTotal, 'dfadsf');
+    store.setState({
+        registration:{
+            grandTotal: totalMark,
+        }
+    })
+    console.log(totalMark);
+    return totalMark;
 }
-
-export default Home;
