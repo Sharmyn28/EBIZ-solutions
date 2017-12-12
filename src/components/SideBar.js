@@ -9,23 +9,19 @@ const SideBar =()=>{
     <Col className="cont-sidebar" lg={3} md={3} xs={3} smHidden xsHidden>
         <img  width="70%" src="https://upload.wikimedia.org/wikipedia/commons/0/05/Logosimbolo_Universidad_de_La_Salle.png"/>
         <Accordion className="container-panel">
-        <Panel className="cont-panel" header="Matriculas" eventKey="1">
-           <NavLink to={"/simulation"} >Simulación de Matrícula</NavLink>
-        </Panel>
-        <Panel header="Inf.Académica" eventKey="2">          
-            <NavLink to={"/professor"}><p>Consolidado de Notas</p></NavLink>
+        <Panel header="Inf.Académica" eventKey="1">          
             <NavLink to={"/fileData"}>Ficha Académica</NavLink>      
         </Panel>        
-        <Panel header="Sanciones" eventKey="3">
+        <Panel header="Sanciones" eventKey="2">
         <NavLink to={"/sanciones"}>Detalles</NavLink>
         </Panel>
-        <Panel header="Preguntas Frecuentes" eventKey="4">        
+        <Panel header="Preguntas Frecuentes" eventKey="3">        
         </Panel>
-        <Panel header="Consultas" eventKey="5">
+        <Panel header="Consultas" eventKey="4">
         </Panel>
-        <Panel header="Información Personal" eventKey="6">        
+        <Panel header="Información Personal" eventKey="5">        
         </Panel>
-        <Panel header="Salir" eventKey="7" onClick={signOut}>
+        <Panel header="Salir" eventKey="6" onClick={signOut}>
         </Panel>
         </Accordion>
     </Col>

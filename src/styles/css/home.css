@@ -1,0 +1,28 @@
+.home-elecion {
+  height: 80vh; }
+  .home-elecion img {
+    margin-left: 30vh;
+    margin-top: 20vh;
+    margin-bottom: 40px; }
+  .home-elecion button {
+    font-size: 3vh;
+    width: 40vh;
+    height: 10vh;
+    color: #0055ff;
+    border: 1.5px solid #0055ff !important; }
+  .home-elecion a {
+    color: #0055ff; }
+
+a:hover {
+  text-decoration: none !important; }
+
+@media (max-width: 1300px) {
+  .home-elecion {
+    height: 80vh; }
+    .home-elecion img {
+      width: 60%;
+      margin-left: 10vh;
+      margin-top: 30vh;
+      margin-bottom: 20px; } }
+
+/*# sourceMappingURL=home.css.map */
