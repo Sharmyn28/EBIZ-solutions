@@ -3,6 +3,8 @@ import { Grid, Row, Col, Button, Table } from 'react-bootstrap';
 import SideBar from '../SideBar';
 import registrationCourses from '../../store/RegistrationCourses';
 import { GrandTotal, getStudentName, changeMarks } from "../../actions/actions";
+import { NavLink, Redirect } from 'react-router-dom';
+import { connect } from 'redux-zero/react';
 //import store from "../../store/store";
 
 const StudentRecord = ({ number, name, mark1, mark2, selectedItem }) => {
@@ -20,7 +22,7 @@ const StudentRecord = ({ number, name, mark1, mark2, selectedItem }) => {
     )
 }
 
-const TableMarks = ({ registration }) => {
+const TableMarks = ({ registration, successLogin }) => {
     const classMarks = registration.map((e, index) => {
         return (
             <StudentRecord
@@ -34,22 +36,27 @@ const TableMarks = ({ registration }) => {
         )
     })
     return (
-        <Col lg={12} md={12}>
-            <Table bordered condensed hover responsive>
-                <thead>
-                    <tr>
-                        <th colSpan="2">Alumnos</th>
-                        <th colSpan="2">Nota de Periodo</th>
-                        <th>Promedio</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {classMarks}
-                </tbody>
-            </Table>
-        </Col>
+        <div>
+            {
+                !successLogin && <Redirect to="/login" />
+            }
+            <Col lg={12} md={12}>
+                <Table bordered condensed hover responsive>
+                    <thead>
+                        <tr>
+                            <th colSpan="2">Alumnos</th>
+                            <th colSpan="2">Nota de Periodo</th>
+                            <th>Promedio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {classMarks}
+                    </tbody>
+                </Table>
+            </Col>
+        </div>
     )
 }
 
-
-export default TableMarks;
+const mapToProps = ({ successLogin }) => ({ successLogin })
+export default connect(mapToProps)(TableMarks);

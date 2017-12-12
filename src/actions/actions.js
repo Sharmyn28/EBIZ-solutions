@@ -75,13 +75,12 @@ export function signOut ()
     auth.signOut();
     store.setState({
         successLogin : false,
-        user: 
+        teacher: 
         {
             id : "",
             email :  "",
             firstName :  "",
             lastName :  "", 
-            boards: [],
         }
     })
 }

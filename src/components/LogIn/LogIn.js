@@ -32,9 +32,9 @@ const LogInForm = ({ successLogin }) => {
 const LogIn = ({ successLogin }) => {
     return (
         <div>
-            {
+            {/* {
                 successLogin && <Redirect to="/professor" />
-            }
+            } */}
             <div className=''>
                 <main id='main-container' role='main'>
                     <div className='view-container sessions new'>
