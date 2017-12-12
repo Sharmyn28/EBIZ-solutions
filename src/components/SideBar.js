@@ -2,6 +2,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from '../styles/css/sideBarMenu.css';
 import { Grid, Row, Col, Button,NavItem,Nav,Accordion,Panel} from 'react-bootstrap';
+import {signOut} from '../actions/actions';
+
 const SideBar =()=>{ 
     return( 
     <Col lg={3} md={3} xs={3} smHidden xsHidden>
@@ -22,7 +24,7 @@ const SideBar =()=>{
         </Panel>
         <Panel header="Información Personal" eventKey="6">        
         </Panel>
-        <Panel header="Salir" eventKey="7">
+        <Panel header="Salir" eventKey="7" onClick={signOut}>
         </Panel>
         </Accordion>
     </Col>
