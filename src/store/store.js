@@ -1,7 +1,7 @@
 import createStore from 'redux-zero';
 import students from "./Students";
 import registrationCourses from "./RegistrationCourses";
-import teacher from "./Teachers";
+// import teacher from "./Teachers";
 import courses from "./Courses";
 import { GrandTotal } from '../actions/actions';
 

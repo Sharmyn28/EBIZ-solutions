@@ -1,0 +1,14 @@
+.container-sanciones {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.sanciones-text {
+  border: 1px solid #5bc6e8;
+  margin-top: 20vh; }
+  .sanciones-text img {
+    margin-top: 2vh; }
+  .sanciones-text p {
+    margin-top: 2vh; }
+
+/*# sourceMappingURL=sanciones.css.map */

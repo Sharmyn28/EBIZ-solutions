@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACA,oBAAoB;EAChB,OAAO,EAAE,IAAI;EACb,eAAe,EAAC,MAAM;EACtB,WAAW,EAAC,MAAM;;AAEtB,eAAe;EACX,MAAM,EAAE,iBAAkB;EAC1B,UAAU,EAAC,IAAI;EACf,mBAAG;IACC,UAAU,EAAC,GAAG;EAElB,iBAAC;IACG,UAAU,EAAC,GAAG",
+"sources": ["../sass/sanciones.scss"],
+"names": [],
+"file": "sanciones.css"
+}
