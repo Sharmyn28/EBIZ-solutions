@@ -23,7 +23,12 @@ const courses =
         {
             idCourse: "c00005",
             idTeacher: "t00003",
-            nameCourse: "Introduccion a la logica"
+            nameCourse: "Introducción a la lógica"
+        },
+        {
+            idCourse: "c00006",
+            idTeacher: "t00001",
+            nameCourse: "Estructura de datos"
         }
     ]
 
