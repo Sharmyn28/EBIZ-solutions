@@ -2,16 +2,15 @@ import React from 'react';
 import SideBar from './SideBar'
 import TableInformation from "./Professor/Info";
 import TableMarks from "./Professor/TableMarks";
-
-
+import '../styles/css/filedata.css'
 import { Grid, Row, Col, Button, Table } from 'react-bootstrap';
 
 const FileData = () => {
     return (
-    <div>
+    <div className=" container-file">
         <SideBar/>
         <Col md={6} >
-    <Table striped bordered condensed hover>
+    <Table className="cont-table" striped bordered condensed hover>
         <thead>
         <tr>
             <th>CODIGO</th>
