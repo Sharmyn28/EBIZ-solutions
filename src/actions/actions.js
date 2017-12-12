@@ -19,7 +19,7 @@ export const GrandTotal = (selectedItem) => {
 
 export const getStudentName = (id) => {
     let student = students.filter(e => e.idStudent === id)
-    return (student[0].lastName.toUpperCase() + ',' + student[0].firstName);
+    return (student[0].lastName.toUpperCase() + ', ' + student[0].firstName);
 
 }
 

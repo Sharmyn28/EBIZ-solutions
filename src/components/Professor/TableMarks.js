@@ -8,15 +8,15 @@ import { connect } from 'redux-zero/react';
 //import store from "../../store/store";
 
 const StudentRecord = ({ number, name, mark1, mark2, selectedItem }) => {
-    let total = (parseInt(mark1) + parseInt(mark2))/2;
+    let total = (parseInt(mark1) + parseInt(mark2)) / 2;
     console.log(mark1 + ' ' + mark2);
 
     return (
         <tr>
             <td>{number}</td>
             <td>{name}</td>
-            <td><input type='number' placeholder='mark1' defaultValue={mark1} onChange={e => changeMarks(e.target.value, 1, selectedItem)}/></td>
-            <td><input type='number' placeholder='mark2' defaultValue={mark2} onChange={e => changeMarks(e.target.value, 2, selectedItem)}/></td>
+            <td><input type='number' placeholder='mark1' defaultValue={mark1} onChange={e => changeMarks(e.target.value, 1, selectedItem)} /></td>
+            <td><input type='number' placeholder='mark1' defaultValue={mark1} onChange={e => changeMarks(e.target.value, 1, selectedItem)} /></td>
             <td>{total}</td>
         </tr>
     )
@@ -45,7 +45,11 @@ const TableMarks = ({ registration, successLogin }) => {
                     <thead>
                         <tr>
                             <th colSpan="2">Alumnos</th>
-                            <th colSpan="2">Nota de Periodo</th>
+                            <th colSpan="2" className='text-center'>
+                                Nota de Periodo
+                            <th>Nota 1</th>
+                                <th>Nota 2</th>
+                            </th>
                             <th>Promedio</th>
                         </tr>
                     </thead>
@@ -58,5 +62,7 @@ const TableMarks = ({ registration, successLogin }) => {
     )
 }
 
-const mapToProps = ({ successLogin }) => ({ successLogin })
-export default connect(mapToProps)(TableMarks);
+
+export default TableMarks;
+//const mapToProps = ({ successLogin }) => ({ successLogin })
+//export default connect(mapToProps)(TableMarks);
