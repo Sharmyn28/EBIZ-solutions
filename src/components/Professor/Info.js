@@ -1,10 +1,12 @@
 import React from 'react';
 import { Grid, Row, Col, Button, Table } from 'react-bootstrap';
 import SideBar from '../SideBar';
+import '../../styles/css/filedata.css'
+
 
 const TeacherRecord = ({ name, course }) => {
     return (
-        <Table bordered condensed responsive>
+        <Table className="cont-info" bordered condensed responsive>
             <tbody>
                 <tr>
                     <th>Profesor</th>
