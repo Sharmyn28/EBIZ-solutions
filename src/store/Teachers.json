@@ -1,39 +1,59 @@
 {
-    "teachers":
+    "users":
     {
         "ehUS0l4ZRFMGOWRwA77EV1a3Pay2":
         {
-            "idTeacher":"t00001",
+            "iduser":"t00001",
             "firstName":"Luz",
             "lastName":"Rodriguez rodriguez",
             "email": "luzrodriguez@institucion.com",            
-            "password":"t00001" 
+            "password":"t00001",
+            "rol": "teacher"
         },
         "lCQZQ6aO2zX6q2IBEiBRTBUaYb73":
         {
-            "idTeacher":"t00002",
+            "iduser":"t00002",
             "firstName":"Raúl",
             "lastName":"Perez Sarmiento",
             "email": "raulperez@institucion.com",            
-            "password":"t00002" 
+            "password":"t00002",
+            "rol": "teacher"
     
         },
         "7hpZJl3iiePAhVf1mtBwOWAvEG63":
         {
-            "idTeacher":"t00003",
+            "iduser":"t00003",
             "firstName":"Sofia",
             "lastName":"Palomino Guevara", 
             "email": "sofiapalomino@institucion.com",                    
-            "password":"t00003" 
+            "password":"t00003",
+            "rol": "teacher" 
     
         },
         "szEnMTRNskT081Bx1rOs04Rx0nG3":
         {
-            "idTeacher":"t00004",
+            "iduser":"t00004",
             "firstName":"Jesús",
             "lastName":"Altamirano Flores",
             "email": "jesusaltamirano@institucion.com",                    
-            "password":"t00004"  
+            "password":"t00004",
+            "rol": "teacher"  
+        },
+        "szEnMTRNskT081Bx1rOs04Rx0nG5": {
+            "iduser": "u00001",
+            "firstName": "Jesús",
+            "lastName": "Sanchez Sanchez",
+            "email": "jesussanchez@institucion.com",
+            "password": "t00004",
+            "rol": "admin"
+        },
+        "szEnMTRNskT081Bx1rOs04Rx0nG8": {
+            "iduser": "u00002",
+            "firstName": "Melina",
+            "lastName": "Flores Flores",
+            "email": "melina@institucion.com",
+            "password": "t00004",
+            "rol": "admin"
         }
     }
 }
