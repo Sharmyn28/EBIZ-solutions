@@ -1,5 +1,6 @@
 import store from '../store/store';
 import students from '../store/Students';
+import teachers from '../store/Teachers';
 import {auth, database} from './firebase';
 
 export const GrandTotal = (selectedItem) => {
@@ -90,6 +91,7 @@ export function signOut ()
 
 export function signIn (user, password) 
 {
+    getTeacher(user);
     auth.signInWithEmailAndPassword(user, password).then(userObj => 
     {
         console.log("userObj", userObj)
@@ -120,7 +122,7 @@ export function signIn (user, password)
             store.setState({
                 teacher: 
                 {
-                    id : userObj.uid,
+                    id : fullUserInfo.id,
                     email :  fullUserInfo.email,
                     firstName :  fullUserInfo.firstName,
                     lastName :  fullUserInfo.lastName,  
@@ -130,6 +132,7 @@ export function signIn (user, password)
             console.log("user", store.getState().user);                                        
         })
     })
+
 }
 
 auth.onAuthStateChanged(user => 
@@ -145,3 +148,27 @@ auth.onAuthStateChanged(user =>
 });
 
 /****** GABY *******/
+export const filterCourses = () =>
+{
+    let cloneCourses = [...store.getState().courses];
+    console.log("cloneCourses", cloneCourses);
+    let id = store.getState().teacher.id;
+    if(id == null)
+    {
+        // filterCourses();
+    }
+    console.log("id", id);    
+    cloneCourses = cloneCourses.filter((course) => course.idTeacher === id)
+    return cloneCourses;
+}
+
+export const getTeacher = (user) => {
+    let teacher = teachers.filter(item => item.email === user)
+    console.log("teacher", teacher)
+    store.setState({
+        teacher : 
+        {
+            id: teacher[0].idTeacher,
+        }
+    })
+}
