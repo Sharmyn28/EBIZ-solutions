@@ -3,6 +3,7 @@ import students from "./Students";
 import registrationCourses from "./RegistrationCourses";
 import teacher from "./Teachers";
 import course from "./Courses";
+import { GrandTotal } from '../actions/actions';
 
 const initialState = 
 {
@@ -13,13 +14,8 @@ const initialState =
         firstName: teacher[0].firstName,
         lastName: teacher[0].lastName,
     },
-    registration: 
-    {
-        student: registrationCourses[0].idStudent,
-        mark1 : registrationCourses[0].mark1,
-        mark2 : registrationCourses[0].mark2,
-        grandTotal: null
-    },
+    registration: registrationCourses,
+    //selectedItem: 0
  };
  
  const store = createStore(initialState);
