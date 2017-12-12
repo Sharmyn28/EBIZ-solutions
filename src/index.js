@@ -25,6 +25,7 @@ const Index = () => (
                 <Route path='/fileData' component={FileData} />
                 <Route path='/sanciones' component={Sanciones} />
                 <Route path='/simulation' component={Simulation} />
+                <Route path='/courseAdmin' component={CourseAdmin} />
             </Switch>
         </HashRouter>
     </Provider>
