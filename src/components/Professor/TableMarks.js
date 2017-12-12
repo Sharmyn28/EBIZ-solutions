@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Row, Col, Button, Table } from 'react-bootstrap';
 import SideBar from '../SideBar';
 import registrationCourses from '../../store/RegistrationCourses';
-import { GrandTotal, getStudentName, changeMarks } from "../../actions/actions";
+import { getStudentName, changeMarks } from "../../actions/actions";
 import { NavLink, Redirect } from 'react-router-dom';
 import { connect } from 'redux-zero/react';
 //import store from "../../store/store";
