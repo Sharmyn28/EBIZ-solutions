@@ -43,6 +43,9 @@ export const changeMarks = (mark, num, selectedItem) => {
     //console.log('newmark', mark)
 }
 
+
+/****** FIREBASE *******/
+
 function snapshotToArray (snapshot)  
 {
     // let user = store.getState().user;
@@ -140,3 +143,5 @@ auth.onAuthStateChanged(user =>
         })
     }
 });
+
+/****** GABY *******/
