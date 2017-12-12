@@ -1,6 +1,6 @@
 import store from '../store/store';
 import students from '../store/Students';
-import teachers from '../store/Teachers';
+import users from '../store/Users';
 import {auth, database} from './firebase';
 
 /*export const GrandTotal = (selectedItem) => {
@@ -60,25 +60,25 @@ export const getTeacherStudents = (id) => {
 function snapshotToArray (snapshot)  
 {
     // let user = store.getState().user;
-    let teachers = [];
+    let users = [];
     snapshot.forEach(childSnapshot => 
     {
         let item = childSnapshot.val();
         let key = childSnapshot.key;
         item.id = key;
-        teachers.push(item);
+        users.push(item);
     });
     store.setState({
-        teachers: teachers
+        users: users
     }) 
-    //console.log("store", store.getState().teachers);    
+    //console.log("store", store.getState().users);    
 }
 
-export const readTeachers = () =>
+export const readUsers = () =>
 {
     // let user = store.getState().user;    
     database
-        .ref('teachers/')
+        .ref('users/')
         .once('value', (res) => {
             snapshotToArray(res)
         });    
@@ -89,7 +89,7 @@ export function signOut ()
     auth.signOut();
     store.setState({
         successLogin : false,
-        teacher: 
+        user: 
         {
             id : "",
             email :  "",
@@ -101,11 +101,10 @@ export function signOut ()
 
 export function signIn (user, password) 
 {
-    getTeacher(user);
     auth.signInWithEmailAndPassword(user, password).then(userObj => 
     {
         //console.log("userObj", userObj)
-        database.ref('teachers/' + userObj.uid).once('value').then(res => 
+        database.ref('users/' + userObj.uid).once('value').then(res => 
         {
             const fullUserInfo = res.val(); 
             //console.log ('full info ', fullUserInfo);
@@ -129,18 +128,20 @@ export function signIn (user, password)
             // })
                
         
-            store.setState({
-                teacher: 
-                {
-                    id : fullUserInfo.id,
-                    email :  fullUserInfo.email,
-                    firstName :  fullUserInfo.firstName,
-                    lastName :  fullUserInfo.lastName,  
-                }
-            })
+            // store.setState({
+            //     teacher: 
+            //     {
+            //         id : fullUserInfo.id,
+            //         email :  fullUserInfo.email,
+            //         firstName :  fullUserInfo.firstName,
+            //         lastName :  fullUserInfo.lastName,  
+            //     }
+            // })
             //console.log("xxxxxxxxxxxxx")
             //console.log("user", store.getState().user);                                        
         })
+    getTeacher(user);
+    
     })
 
 }
@@ -151,9 +152,24 @@ auth.onAuthStateChanged(user =>
         //console.log('user', user);
         let usersRef = database.ref('users');
         let userRef = usersRef.child(user.uid);
+        database.ref('users/' + user.uid).once('value').then(res => {
+            const fullUserInfo = res.val();
+        console.log("userRef", userRef)
+        console.log("fullUserInfo", fullUserInfo)        
         store.setState({
-            successLogin : true
+            successLogin : true,
+            user: 
+            {
+                id : fullUserInfo.idUser,
+                email :  fullUserInfo.email,
+                firstName :  fullUserInfo.firstName,
+                lastName :  fullUserInfo.lastName,  
+                rol: fullUserInfo.rol
+            }
         })
+    console.log("store auth", store.getState().user)
+    
+    });
     }
 });
 
@@ -162,21 +178,29 @@ export const filterCourses = () =>
 {
     let cloneCourses = [...store.getState().courses];
     //console.log("cloneCourses", cloneCourses);
-    let id = store.getState().teacher.id;
+    let id = store.getState().user.id;
     //console.log("id", id);    
     cloneCourses = cloneCourses.filter((course) => course.idTeacher === id)
     return cloneCourses;
 }
 
 export const getTeacher = (user) => {
-    let teacher = teachers.filter(item => item.email === user)
-    //console.log("teacher", teacher)
+    let teacher = users.filter(item => item.email === user)
+    console.log("teacher", teacher)
     store.setState({
         teacher : 
         {
-            id: teacher[0].idTeacher,
+            id: teacher[0].idUser,
             firstName: teacher[0].firstName,
             lastName: teacher[0].lastName,
         }
+    })
+    console.log("store teacher", store.getState().user)
+}
+
+export const saveCourses = (courses) =>
+{
+    store.setState({
+        courses : courses,
     })
 }

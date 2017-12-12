@@ -8,12 +8,13 @@ import { GrandTotal } from '../actions/actions';
 const initialState = 
 {
     successLogin : false,    
-    teacher: 
+    user: 
     {
         id: null,
         email :  null,        
         firstName: null,
         lastName: null,
+        rol: null
     },
     courses: courses,
     registration: registrationCourses,
