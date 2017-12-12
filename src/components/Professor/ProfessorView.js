@@ -5,14 +5,14 @@ import TableMarks from "./TableMarks";
 import TableInformation from "./Info";
 import { connect } from 'redux-zero/react';
 
-const Professor = ({ teacher, teacherClass, successLogin }) => {
+const Professor = ({ user, teacherClass, successLogin }) => {
     return (
         <Grid fluid>
             <Row>
                 <SideBar />
                 <Col lg={8} md={8}></Col>
                 <Col lg={8} md={8}>
-                    <TableInformation teacher={teacher} teacherClass={teacherClass}/>
+                    <TableInformation user={user} teacherClass={teacherClass}/>
                     <TableMarks teacherClass={teacherClass} successLogin={successLogin}/>
                     <Col lgOffset={5} lg={2} md={2}><Button>Guardar Notas</Button></Col> 
                 </Col>
@@ -22,5 +22,5 @@ const Professor = ({ teacher, teacherClass, successLogin }) => {
 }
 
 //export default Professor;
-const mapToProps = ({ teacher, teacherClass, successLogin }) => ({ teacher, teacherClass, successLogin })
+const mapToProps = ({ user, teacherClass, successLogin }) => ({ user, teacherClass, successLogin })
 export default connect(mapToProps)(Professor);

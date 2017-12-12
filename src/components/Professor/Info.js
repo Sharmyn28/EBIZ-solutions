@@ -27,13 +27,13 @@ const TeacherRecord = ({ name, course }) => {
     )
 }
 
-const TableInformation = ({ teacher, teacherClass }) => {
+const TableInformation = ({ user, teacherClass }) => {
     console.log(teacherClass)
     const id = teacherClass[0].idCourse;
     return (
         <Col lgOffset={8} mdOffset={8} lg={4} md={4}>
             <TeacherRecord
-                name={teacher.lastName + ' ' + teacher.firstName}
+                name={user.lastName + ' ' + user.firstName}
                 course={id}
             />
         </Col>

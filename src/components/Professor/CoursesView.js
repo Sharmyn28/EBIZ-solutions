@@ -12,7 +12,7 @@ const Courses = ({ successLogin }) => {
     let courses = filterCourses();
     const listCourses = courses.map((course, index) => {
         return (
-            <ListGroupItem key={index}><NavLink to={"./professor"} onClick={() => {
+            <ListGroupItem key={index}><NavLink to={"/professor"} onClick={() => {
                 getTeacherStudents(course.idCourse);
                 // saveCourses(courses);
             }}>
@@ -25,7 +25,7 @@ const Courses = ({ successLogin }) => {
     return (
         <Grid fluid>
             {
-                !successLogin && <Redirect to="/login" />
+                !successLogin && <Redirect to="/home" />
             }
             <Row>
                 <SideBar />

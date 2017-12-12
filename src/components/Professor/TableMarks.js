@@ -37,7 +37,7 @@ const TableMarks = ({ teacherClass, successLogin }) => {
     return (
         <div>
             {
-                !successLogin && <Redirect to="/login" />
+                !successLogin && <Redirect to="/home" />
             }
             <Col lg={12} md={12}>
                 <Table bordered condensed hover responsive>
