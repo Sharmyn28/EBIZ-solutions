@@ -3,7 +3,7 @@
     {
         "ehUS0l4ZRFMGOWRwA77EV1a3Pay2":
         {
-            "iduser":"t00001",
+            "idUser":"t00001",
             "firstName":"Luz",
             "lastName":"Rodriguez rodriguez",
             "email": "luzrodriguez@institucion.com",            
@@ -12,7 +12,7 @@
         },
         "lCQZQ6aO2zX6q2IBEiBRTBUaYb73":
         {
-            "iduser":"t00002",
+            "idUser":"t00002",
             "firstName":"Raúl",
             "lastName":"Perez Sarmiento",
             "email": "raulperez@institucion.com",            
@@ -22,7 +22,7 @@
         },
         "7hpZJl3iiePAhVf1mtBwOWAvEG63":
         {
-            "iduser":"t00003",
+            "idUser":"t00003",
             "firstName":"Sofia",
             "lastName":"Palomino Guevara", 
             "email": "sofiapalomino@institucion.com",                    
@@ -32,7 +32,7 @@
         },
         "szEnMTRNskT081Bx1rOs04Rx0nG3":
         {
-            "iduser":"t00004",
+            "idUser":"t00004",
             "firstName":"Jesús",
             "lastName":"Altamirano Flores",
             "email": "jesusaltamirano@institucion.com",                    
@@ -40,7 +40,7 @@
             "rol": "teacher"  
         },
         "szEnMTRNskT081Bx1rOs04Rx0nG5": {
-            "iduser": "u00001",
+            "idUser": "u00001",
             "firstName": "Jesús",
             "lastName": "Sanchez Sanchez",
             "email": "jesussanchez@institucion.com",
@@ -48,7 +48,7 @@
             "rol": "admin"
         },
         "szEnMTRNskT081Bx1rOs04Rx0nG8": {
-            "iduser": "u00002",
+            "idUser": "u00002",
             "firstName": "Melina",
             "lastName": "Flores Flores",
             "email": "melina@institucion.com",
