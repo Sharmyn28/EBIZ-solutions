@@ -1,0 +1,24 @@
+#sign_in_form {
+  margin-top: 10%; }
+  #sign_in_form img {
+    margin-bottom: 15px; }
+  #sign_in_form input {
+    margin-top: 10px;
+    width: 20%; }
+  #sign_in_form button {
+    margin-top: 10px; }
+
+.field input {
+  border: 2px solid #5bc6e8;
+  height: 6vh; }
+.field span {
+  border: 5px solid #5bc6e8; }
+
+.btn-default {
+  border: 1.5px solid #5bc6e8 !important;
+  background: transparent !important; }
+
+.btn {
+  border-radius: 0px; }
+
+/*# sourceMappingURL=login.css.map */

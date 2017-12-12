@@ -1,3 +1,25 @@
+$celeste:rgb(91, 198, 232);
+$azul:rgb(0,85,255);
+.cont-sidebar{
+    background-color: $celeste;
+    border: 1px solid $celeste;
+    width: 25%;
+    height: 100vh;
+    img{
+        position: relative;
+        margin: 15px 40px;
+     
+    }
+}
+.panel-default>.panel-heading {
+    background-image: linear-gradient(to bottom,#ffffff 0,#ffffff 100%);
+}
+// .panel-group .panel {
+//     margin-bottom: 0;
+//     border-radius: 4px;
+//     background-color: transparent !important;    
+// }
+
 .panel-group .panel :hover {
     margin-bottom: 0;
     border-radius: 4px;
