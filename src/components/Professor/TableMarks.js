@@ -5,6 +5,7 @@ import registrationCourses from '../../store/RegistrationCourses';
 import { getStudentName, changeMarks } from "../../actions/actions";
 import { NavLink, Redirect } from 'react-router-dom';
 import { connect } from 'redux-zero/react';
+import '../../styles/css/filedata.css'
 //import store from "../../store/store";
 
 const StudentRecord = ({ number, name, mark1, mark2, selectedItem }) => {
@@ -14,8 +15,8 @@ const StudentRecord = ({ number, name, mark1, mark2, selectedItem }) => {
         <tr>
             <td>{number}</td>
             <td>{name}</td>
-            <td><input type='number' placeholder='mark1' defaultValue={mark1} onChange={e => changeMarks(e.target.value, 1, selectedItem)} /></td>
-            <td><input type='number' placeholder='mark2' defaultValue={mark2} onChange={e => changeMarks(e.target.value, 2, selectedItem)} /></td>
+            <td><input className="mark" type='number' placeholder='mark1' defaultValue={mark1} onChange={e => changeMarks(e.target.value, 1, selectedItem)} /></td>
+            <td><input className="mark"  type='number' placeholder='mark2' defaultValue={mark2} onChange={e => changeMarks(e.target.value, 2, selectedItem)} /></td>
             <td>{total}</td>
         </tr>
     )
@@ -42,9 +43,7 @@ const TableMarks = ({ user }) => {
                         <tr>
                             <th colSpan="2">Alumnos</th>
                             <th colSpan="2" className='text-center'>
-                                Nota de Periodo
-                                <th>Nota 1</th>
-                                <th>Nota 2</th>
+                                Nota de Periodo            
                             </th>
                             <th>Promedio</th>
                         </tr>
