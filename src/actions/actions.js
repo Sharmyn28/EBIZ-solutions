@@ -57,14 +57,21 @@ export const changeMarks = (mark, num, selectedItem) => {
 
 export const getTeacherStudents = (id) => {
     const classes = [...store.getState().registration];
+    const cloneUser = store.getState().user;    
     let students = classes.filter(e => e.idCourse === id)
-    console.log('array', students);
+    console.log('cloneUser', store.getState().user);
     store.setState({
         user:
         {
+            id : cloneUser.idUser,
+            email :  cloneUser.email,
+            firstName :  cloneUser.firstName,
+            lastName :  cloneUser.lastName,  
+            rol: cloneUser.rol,
             teacherClass: students
         }
     });
+    console.log('user get', store.getState().user);    
     Utils.store("state", store.getState());
     
     //return (student[0].lastName.toUpperCase() + ', ' + student[0].firstName);
@@ -198,6 +205,7 @@ auth.onAuthStateChanged(user =>
 export const filterCourses = () =>
 {
     let cloneCourses = [...store.getState().courses];
+    console.log("store filter", store.getState().user)
     //console.log("cloneCourses", cloneCourses);
     let id = store.getState().user.id;
     //console.log("id", id);    
@@ -207,7 +215,7 @@ export const filterCourses = () =>
 
 export const getTeacher = (user) => {
     let teacher = users.filter(item => item.email === user)
-    console.log("teacher", teacher)
+    console.log("teacher fd", user)
     store.setState({
         user : 
         {

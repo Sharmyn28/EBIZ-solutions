@@ -28,7 +28,7 @@ const TeacherRecord = ({ name, course }) => {
 }
 
 const TableInformation = ({ user }) => {
-    console.log(user.teacherClass)
+    console.log("user", user)
     let id  = null;
     if (user && user.teacherClass)
         id = user.teacherClass[0].idCourse;

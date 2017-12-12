@@ -8,6 +8,7 @@ import { NavLink, Redirect } from 'react-router-dom';
 
 const Professor = ({ user, successLogin }) => {
 console.log ( "successLogin", successLogin)
+console.log ( "user prof", user)
 return (
 <Grid fluid>
 {
