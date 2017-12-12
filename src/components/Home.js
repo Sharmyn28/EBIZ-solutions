@@ -7,9 +7,9 @@ const Home = () => {
         <div>
             Home
 
-            <Button><NavLink to={'/login'}> Profesor</NavLink></Button>
+            <Button><NavLink to={'/login'} id='teacher'> Profesor</NavLink></Button>
+            <Button>/<NavLink to={'/login'} id='admin'> Admin</NavLink></Button>
             <Button>Alumno</Button>
-            <Button>/<NavLink to={'/login'}> Admin</NavLink></Button>
         </div>
     )
 }
