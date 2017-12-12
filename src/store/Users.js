@@ -39,7 +39,7 @@ const users =
             "firstName": "Jesús",
             "lastName": "Sanchez Sanchez",
             "email": "jesussanchez@institucion.com",
-            "password": "t00004",
+            "password": "u00001",
             "rol": "admin"
         },
         {
@@ -47,7 +47,7 @@ const users =
             "firstName": "Melina",
             "lastName": "Flores Flores",
             "email": "melina@institucion.com",
-            "password": "t00004",
+            "password": "u00002",
             "rol": "admin"
         }
     ]
