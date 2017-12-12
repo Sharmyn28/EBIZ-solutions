@@ -15,6 +15,7 @@ const initialState =
         lastName: teacher[0].lastName,
     },
     registration: registrationCourses,
+    teacherClass: [],
     //selectedItem: 0
  };
  

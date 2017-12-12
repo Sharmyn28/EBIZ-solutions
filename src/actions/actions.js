@@ -43,7 +43,6 @@ export const changeMarks = (mark, num, selectedItem) => {
     //console.log('newmark', mark)
 }
 
-
 /****** FIREBASE *******/
 
 function snapshotToArray (snapshot)  
