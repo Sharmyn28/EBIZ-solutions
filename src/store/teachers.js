@@ -3,7 +3,7 @@ const teachers=
     {
         idTeacher:"t00001",
         firstName:"Luz",
-        lastName:"Rodriguez rodriguez",
+        lastName:"Rodriguez Rodriguez",
         email: "luzrodriguez@institucion.com",
         password:"t00001" 
     },

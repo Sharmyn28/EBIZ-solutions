@@ -44,6 +44,16 @@ export const changeMarks = (mark, num, selectedItem) => {
     //console.log('newmark', mark)
 }
 
+export const getTeacherStudents = (id) => {
+    const classes = [...store.getState().registration];
+    let students = classes.filter(e => e.idCourse === id)
+    console.log('array', students);
+    store.setState({
+        teacherClass: students
+    });
+    //return (student[0].lastName.toUpperCase() + ', ' + student[0].firstName);
+}
+
 
 /****** FIREBASE *******/
 
@@ -61,7 +71,7 @@ function snapshotToArray (snapshot)
     store.setState({
         teachers: teachers
     }) 
-    console.log("store", store.getState().teachers);    
+    //console.log("store", store.getState().teachers);    
 }
 
 export const readTeachers = () =>
@@ -94,11 +104,11 @@ export function signIn (user, password)
     getTeacher(user);
     auth.signInWithEmailAndPassword(user, password).then(userObj => 
     {
-        console.log("userObj", userObj)
+        //console.log("userObj", userObj)
         database.ref('teachers/' + userObj.uid).once('value').then(res => 
         {
             const fullUserInfo = res.val(); 
-            console.log ('full info ', fullUserInfo);
+            //console.log ('full info ', fullUserInfo);
             // if(!fullUserInfo)
             //     fullUserInfo = [];
             // database.ref('users/' + userObj.uid + '/boards').once('value').then(res =>
@@ -128,8 +138,8 @@ export function signIn (user, password)
                     lastName :  fullUserInfo.lastName,  
                 }
             })
-            console.log("xxxxxxxxxxxxx")
-            console.log("user", store.getState().user);                                        
+            //console.log("xxxxxxxxxxxxx")
+            //console.log("user", store.getState().user);                                        
         })
     })
 
@@ -138,7 +148,7 @@ export function signIn (user, password)
 auth.onAuthStateChanged(user => 
 {
     if (user) {
-        console.log('user', user);
+        //console.log('user', user);
         let usersRef = database.ref('users');
         let userRef = usersRef.child(user.uid);
         store.setState({
@@ -151,24 +161,22 @@ auth.onAuthStateChanged(user =>
 export const filterCourses = () =>
 {
     let cloneCourses = [...store.getState().courses];
-    console.log("cloneCourses", cloneCourses);
+    //console.log("cloneCourses", cloneCourses);
     let id = store.getState().teacher.id;
-    if(id == null)
-    {
-        // filterCourses();
-    }
-    console.log("id", id);    
+    //console.log("id", id);    
     cloneCourses = cloneCourses.filter((course) => course.idTeacher === id)
     return cloneCourses;
 }
 
 export const getTeacher = (user) => {
     let teacher = teachers.filter(item => item.email === user)
-    console.log("teacher", teacher)
+    //console.log("teacher", teacher)
     store.setState({
         teacher : 
         {
             id: teacher[0].idTeacher,
+            firstName: teacher[0].firstName,
+            lastName: teacher[0].lastName,
         }
     })
 }

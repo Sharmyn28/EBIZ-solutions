@@ -17,6 +17,7 @@ const initialState =
     },
     courses: courses,
     registration: registrationCourses,
+    teacherClass: [],
     //selectedItem: 0
  };
  

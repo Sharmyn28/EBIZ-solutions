@@ -2,45 +2,40 @@ import React from 'react';
 import { Grid, Row, Col, Button, Table } from 'react-bootstrap';
 import SideBar from '../SideBar';
 
-/*const TeacherRecord = ({ number, name, mark1, mark2 }) => {
+const TeacherRecord = ({ name, course }) => {
     return (
-        <tr>
-            <th>{number}</th>
-            <td>{name}</td>
-        </tr>
+        <Table bordered condensed responsive>
+            <tbody>
+                <tr>
+                    <th>Profesor</th>
+                    <td>{name}</td>
+                </tr>
+                <tr>
+                    <th>Curso</th>
+                    <td>{course}</td>
+                </tr>
+                <tr>
+                    <th>Nivel</th>
+                    <td>Secundaria, Cuarto c</td>
+                </tr>
+                <tr>
+                    <th>Periodo</th>
+                    <td>2015, 3 Bimestre</td>
+                </tr>
+            </tbody>
+        </Table>
     )
-}*/
+}
 
-const TableInformation = () => {
+const TableInformation = ({ teacher, teacherClass }) => {
+    console.log(teacherClass)
+    const id = teacherClass[0].idCourse;
     return (
         <Col lgOffset={8} mdOffset={8} lg={4} md={4}>
-            <Table bordered condensed responsive>
-                {/*<thead>
-                <tr>
-                    <th colSpan="2">Alumnos</th>
-                    <th colSpan="2">Nota de Periodo</th>
-                    <th>Promedio</th>
-                </tr>
-            </thead>*/}
-                <tbody>
-                    <tr>
-                        <th>Profesor</th>
-                        <td>Rodriguez Rodriguez, Luz</td>
-                    </tr>
-                    <tr>
-                        <th>Curso</th>
-                        <td>ghchgdhg</td>
-                    </tr>
-                    <tr>
-                        <th>Nivel</th>
-                        <td>Secundaria, Cuarto c</td>
-                    </tr>
-                    <tr>
-                        <th>Periodo</th>
-                        <td>2015, 3 Bimestre</td>
-                    </tr>
-                </tbody>
-            </Table>
+            <TeacherRecord
+                name={teacher.lastName + ' ' + teacher.firstName}
+                course={id}
+            />
         </Col>
     )
 }

@@ -9,7 +9,7 @@ import { connect } from 'redux-zero/react';
 
 const StudentRecord = ({ number, name, mark1, mark2, selectedItem }) => {
     let total = (parseInt(mark1) + parseInt(mark2)) / 2;
-    console.log(mark1 + ' ' + mark2);
+    //console.log(mark1 + ' ' + mark2);
 
     return (
         <tr>
@@ -22,8 +22,8 @@ const StudentRecord = ({ number, name, mark1, mark2, selectedItem }) => {
     )
 }
 
-const TableMarks = ({ registration, successLogin }) => {
-    const classMarks = registration.map((e, index) => {
+const TableMarks = ({ teacherClass, successLogin }) => {
+    const classMarks = teacherClass.map((e, index) => {
         return (
             <StudentRecord
                 key={index}
@@ -47,7 +47,7 @@ const TableMarks = ({ registration, successLogin }) => {
                             <th colSpan="2">Alumnos</th>
                             <th colSpan="2" className='text-center'>
                                 Nota de Periodo
-                            <th>Nota 1</th>
+                                <th>Nota 1</th>
                                 <th>Nota 2</th>
                             </th>
                             <th>Promedio</th>
