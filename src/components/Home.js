@@ -10,7 +10,7 @@ const Home = () => {
         <Col md={10} xs={10}>
         <img width="20%" src="https://upload.wikimedia.org/wikipedia/commons/0/05/Logosimbolo_Universidad_de_La_Salle.png"/>
         </Col>
-        <Col md={12} xs={12}>
+        <Col md={12} xs={12} lg={12}>
             <Button><NavLink to={'/login'} id='teacher' onClick={e => saveRol(e.target.id)}>Profesor</NavLink></Button>
             <Button><NavLink to={'/home'}>Alumno</NavLink></Button>
             <Button><NavLink to={'/login'} id='admin'  onClick={e => saveRol(e.target.id)}>Admin</NavLink></Button>
