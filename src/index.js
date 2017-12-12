@@ -8,11 +8,11 @@ import store from './store/store';
 import Home from "./components/Home";
 import Professor from "./components/Professor/ProfessorView";
 import LogIn from "./components/LogIn/LogIn";
-import Courses from "./components/Professor/CoursesView";
 import registerServiceWorker from './registerServiceWorker';
 import FileData from "./components/FileData";
 import Sanciones from "./components/sanciones";
 import Simulation from "./components/Simulation";
+import CourseAdmin from './components/CourseAdmin'
 
 const Index = () => (
     <Provider store={store}>
@@ -22,7 +22,6 @@ const Index = () => (
                 <Route path='/home' component={Home} />
                 <Route path='/professor' component={Professor} />
                 <Route path='/login' component={LogIn} />
-                <Route path='/courses' component={Courses} />                
                 <Route path='/fileData' component={FileData} />
                 <Route path='/sanciones' component={Sanciones} />
                 <Route path='/simulation' component={Simulation} />
