@@ -2,22 +2,26 @@ import React from 'react';
 import { Grid, Row, Col, Button, Table } from 'react-bootstrap';
 import SideBar from '../SideBar';
 import registrationCourses from '../../store/RegistrationCourses';
-import { GrandTotal, getStudentName } from "../../actions/actions";
+import { GrandTotal, getStudentName, changeMarks } from "../../actions/actions";
+//import store from "../../store/store";
 
-const StudentRecord = ({ number, name, mark1, mark2 }) => {
+const StudentRecord = ({ number, name, mark1, mark2, selectedItem }) => {
+    let total = (parseInt(mark1) + parseInt(mark2))/2;
+    console.log(mark1 + ' ' + mark2);
+
     return (
         <tr>
             <td>{number}</td>
             <td>{name}</td>
-            <td><input placeholder='mark1' value={ mark1 }/></td>
-            <td><input placeholder='mark1' value={mark2} /></td>
-            <td>{GrandTotal(mark1, mark2)}</td>
+            <td><input type='number' placeholder='mark1' defaultValue={mark1} onChange={e => changeMarks(e.target.value, 1, selectedItem)}/></td>
+            <td><input type='number' placeholder='mark2' defaultValue={mark2} onChange={e => changeMarks(e.target.value, 2, selectedItem)}/></td>
+            <td>{total}</td>
         </tr>
     )
 }
 
-const TableMarks = () => {
-    const classMarks = registrationCourses.map((e, index) => {
+const TableMarks = ({ registration }) => {
+    const classMarks = registration.map((e, index) => {
         return (
             <StudentRecord
                 key={index}
@@ -25,6 +29,7 @@ const TableMarks = () => {
                 name={getStudentName(e.idStudent)}
                 mark1={e.mark1}
                 mark2={e.mark2}
+                selectedItem={index}
             />
         )
     })
@@ -45,5 +50,6 @@ const TableMarks = () => {
         </Col>
     )
 }
+
 
 export default TableMarks;
