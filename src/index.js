@@ -11,8 +11,7 @@ import LogIn from "./components/LogIn/LogIn";
 import registerServiceWorker from './registerServiceWorker';
 import FileData from "./components/FileData";
 import Sanciones from "./components/sanciones";
-
-
+import Simulation from "./components/Simulation";
 
 const Index = () => (
     <Provider store={store}>
@@ -24,6 +23,7 @@ const Index = () => (
                 <Route path='/login' component={LogIn} />
                 <Route path='/fileData' component={FileData} />
                 <Route path='/sanciones' component={Sanciones} />
+                <Route path='/simulation' component={Simulation} />
             </Switch>
         </HashRouter>
     </Provider>
