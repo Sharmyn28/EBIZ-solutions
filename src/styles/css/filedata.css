@@ -7,4 +7,12 @@
   border: none;
   border-color: transparent !important; }
 
+@media (min-width: 1200px) {
+  .col-lg-offset-8 {
+    margin-left: 35% !important; } }
+.cont-info {
+  float: left !important;
+  margin-top: 10vh;
+  margin-bottom: 5vh; }
+
 /*# sourceMappingURL=filedata.css.map */

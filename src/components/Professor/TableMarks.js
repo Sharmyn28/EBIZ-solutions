@@ -7,7 +7,6 @@ import { NavLink, Redirect } from 'react-router-dom';
 import { connect } from 'redux-zero/react';
 import '../../styles/css/filedata.css'
 //import store from "../../store/store";
-
 const StudentRecord = ({ number, name, mark1, mark2, selectedItem }) => {
     let total = (parseInt(mark1) + parseInt(mark2)) / 2;
     //console.log(mark1 + ' ' + mark2);

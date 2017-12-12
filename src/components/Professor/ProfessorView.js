@@ -24,9 +24,6 @@ successLogin &&
 <Col lgOffset={5} lg={2} md={2}><Button>Guardar Notas</Button></Col> 
 </Col>
 </Row>
-} 
-
-
 }
 </Grid>
 )
