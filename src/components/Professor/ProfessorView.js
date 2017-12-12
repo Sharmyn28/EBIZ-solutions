@@ -13,6 +13,7 @@ const Professor = ({ registration }) => {
                 <Col lg={8} md={8}>
                     <TableInformation/>
                     <TableMarks registration={registration}/>
+                    <Col lgOffset={5} lg={2} md={2}><Button>Guardar Notas</Button></Col> 
                 </Col>
             </Row>
         </Grid>
