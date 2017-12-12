@@ -26,19 +26,19 @@ export const getStudentName = (id) => {
 
 export const changeMarks = (mark, num, selectedItem) => {
     if (num === 1) {
-        const cloneMarks = [...store.getState().registration];
+        const cloneMarks = [...store.getState().teacherClass];
         cloneMarks[selectedItem].mark1 = mark; 
         
         store.setState({
-            registration: cloneMarks
+            teacherClass: cloneMarks
         })
         //console.log('mark1', mark)
     }else if (num === 2) {
-        const cloneMarks2 = [...store.getState().registration];
+        const cloneMarks2 = [...store.getState().teacherClass];
         cloneMarks2[selectedItem].mark2 = mark;
 
         store.setState({
-            registration: cloneMarks2
+            teacherClass: cloneMarks2
         })
     }
     //console.log('newmark', mark)
@@ -101,7 +101,6 @@ export function signOut ()
 
 export function signIn (user, password) 
 {
-    getTeacher(user);
     auth.signInWithEmailAndPassword(user, password).then(userObj => 
     {
         //console.log("userObj", userObj)
@@ -129,18 +128,20 @@ export function signIn (user, password)
             // })
                
         
-            store.setState({
-                teacher: 
-                {
-                    id : fullUserInfo.id,
-                    email :  fullUserInfo.email,
-                    firstName :  fullUserInfo.firstName,
-                    lastName :  fullUserInfo.lastName,  
-                }
-            })
+            // store.setState({
+            //     teacher: 
+            //     {
+            //         id : fullUserInfo.id,
+            //         email :  fullUserInfo.email,
+            //         firstName :  fullUserInfo.firstName,
+            //         lastName :  fullUserInfo.lastName,  
+            //     }
+            // })
             //console.log("xxxxxxxxxxxxx")
             //console.log("user", store.getState().user);                                        
         })
+    getTeacher(user);
+    
     })
 
 }
@@ -149,11 +150,25 @@ auth.onAuthStateChanged(user =>
 {
     if (user) {
         //console.log('user', user);
-        let usersRef = database.ref('users');
+        let usersRef = database.ref('teachers');
         let userRef = usersRef.child(user.uid);
+        database.ref('teachers/' + user.uid).once('value').then(res => {
+            const fullUserInfo = res.val();
+        console.log("userRef", userRef)
+        console.log("fullUserInfo", fullUserInfo)        
         store.setState({
-            successLogin : true
+            successLogin : true,
+            teacher: 
+            {
+                id : fullUserInfo.idTeacher,
+                email :  fullUserInfo.email,
+                firstName :  fullUserInfo.firstName,
+                lastName :  fullUserInfo.lastName,  
+            }
         })
+    console.log("store auth", store.getState().teacher)
+    
+    });
     }
 });
 
@@ -170,7 +185,7 @@ export const filterCourses = () =>
 
 export const getTeacher = (user) => {
     let teacher = teachers.filter(item => item.email === user)
-    //console.log("teacher", teacher)
+    console.log("teacher", teacher)
     store.setState({
         teacher : 
         {
@@ -178,5 +193,13 @@ export const getTeacher = (user) => {
             firstName: teacher[0].firstName,
             lastName: teacher[0].lastName,
         }
+    })
+    console.log("store teacher", store.getState().teacher)
+}
+
+export const saveCourses = (courses) =>
+{
+    store.setState({
+        courses : courses,
     })
 }

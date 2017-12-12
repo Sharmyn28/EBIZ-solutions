@@ -6,13 +6,18 @@ import TableInformation from "./Info";
 import { connect } from 'redux-zero/react';
 import { filterCourses } from '../../actions/actions';
 import { NavLink, Redirect } from 'react-router-dom';
-import { getTeacherStudents } from "../../actions/actions";
+import { getTeacherStudents, saveCourses } from "../../actions/actions";
 
 const Courses = ({ successLogin }) => {
     let courses = filterCourses();
     const listCourses = courses.map((course, index) => {
         return (
-            <ListGroupItem key={index}><NavLink to={"./professor"} onClick={() => getTeacherStudents(course.idCourse)}>{course.nameCourse}</NavLink></ListGroupItem>
+            <ListGroupItem key={index}><NavLink to={"./professor"} onClick={() => {
+                getTeacherStudents(course.idCourse);
+                // saveCourses(courses);
+            }}>
+                {course.nameCourse}</NavLink>
+            </ListGroupItem>
         )
     });
     //console.log("courses", courses)
