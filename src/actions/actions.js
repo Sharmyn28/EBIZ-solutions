@@ -1,5 +1,7 @@
 import store from '../store/store';
 import students from '../store/Students';
+import teachers from '../store/Teachers';
+import {auth, database} from './firebase';
 
 export const GrandTotal = (selectedItem) => {
     //console.log(selectedItem)
@@ -18,7 +20,7 @@ export const GrandTotal = (selectedItem) => {
 
 export const getStudentName = (id) => {
     let student = students.filter(e => e.idStudent === id)
-    return (student[0].lastName.toUpperCase() + ',' + student[0].firstName);
+    return (student[0].lastName.toUpperCase() + ', ' + student[0].firstName);
 
 }
 
@@ -40,4 +42,141 @@ export const changeMarks = (mark, num, selectedItem) => {
         })
     }
     //console.log('newmark', mark)
+}
+
+export const getTeacherStudents = (id) => {
+    const classes = [...store.getState().registration];
+    let students = classes.filter(e => e.idCourse === id)
+    console.log('array', students);
+    store.setState({
+        teacherClass: students
+    });
+    //return (student[0].lastName.toUpperCase() + ', ' + student[0].firstName);
+}
+
+
+/****** FIREBASE *******/
+
+function snapshotToArray (snapshot)  
+{
+    // let user = store.getState().user;
+    let teachers = [];
+    snapshot.forEach(childSnapshot => 
+    {
+        let item = childSnapshot.val();
+        let key = childSnapshot.key;
+        item.id = key;
+        teachers.push(item);
+    });
+    store.setState({
+        teachers: teachers
+    }) 
+    //console.log("store", store.getState().teachers);    
+}
+
+export const readTeachers = () =>
+{
+    // let user = store.getState().user;    
+    database
+        .ref('teachers/')
+        .once('value', (res) => {
+            snapshotToArray(res)
+        });    
+}
+
+export function signOut () 
+{
+    auth.signOut();
+    store.setState({
+        successLogin : false,
+        teacher: 
+        {
+            id : "",
+            email :  "",
+            firstName :  "",
+            lastName :  "", 
+        }
+    })
+}
+
+export function signIn (user, password) 
+{
+    getTeacher(user);
+    auth.signInWithEmailAndPassword(user, password).then(userObj => 
+    {
+        //console.log("userObj", userObj)
+        database.ref('teachers/' + userObj.uid).once('value').then(res => 
+        {
+            const fullUserInfo = res.val(); 
+            //console.log ('full info ', fullUserInfo);
+            // if(!fullUserInfo)
+            //     fullUserInfo = [];
+            // database.ref('users/' + userObj.uid + '/boards').once('value').then(res =>
+            // {
+            //     let boards = res;
+            //     let boardObjs = [];
+            //     boards.forEach(item => {
+            //         let obj = item.val();
+            //         console.log("obj", obj)
+            //         obj.id = item.key;
+            //         boardObjs.push(obj);
+            //     })
+            //     console.log("boardObjs", boardObjs);            
+            //     fullUserInfo.boards = boardObjs;
+            //     console.log("fullUserInfo.boards", fullUserInfo.boards);                            
+            // console.log("user", store.getState().user);                                        
+            
+            // })
+               
+        
+            store.setState({
+                teacher: 
+                {
+                    id : fullUserInfo.id,
+                    email :  fullUserInfo.email,
+                    firstName :  fullUserInfo.firstName,
+                    lastName :  fullUserInfo.lastName,  
+                }
+            })
+            //console.log("xxxxxxxxxxxxx")
+            //console.log("user", store.getState().user);                                        
+        })
+    })
+
+}
+
+auth.onAuthStateChanged(user => 
+{
+    if (user) {
+        //console.log('user', user);
+        let usersRef = database.ref('users');
+        let userRef = usersRef.child(user.uid);
+        store.setState({
+            successLogin : true
+        })
+    }
+});
+
+/****** GABY *******/
+export const filterCourses = () =>
+{
+    let cloneCourses = [...store.getState().courses];
+    //console.log("cloneCourses", cloneCourses);
+    let id = store.getState().teacher.id;
+    //console.log("id", id);    
+    cloneCourses = cloneCourses.filter((course) => course.idTeacher === id)
+    return cloneCourses;
+}
+
+export const getTeacher = (user) => {
+    let teacher = teachers.filter(item => item.email === user)
+    //console.log("teacher", teacher)
+    store.setState({
+        teacher : 
+        {
+            id: teacher[0].idTeacher,
+            firstName: teacher[0].firstName,
+            lastName: teacher[0].lastName,
+        }
+    })
 }
