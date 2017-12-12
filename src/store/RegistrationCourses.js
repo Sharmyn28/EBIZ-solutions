@@ -5,7 +5,8 @@ const registrationCourses =
         idStudent: "s00001",
         idCourse: "c00001",
         mark1: 10,
-        mark2: 12,        
+        mark2: 12, 
+        gradeTotal: null,       
     },
     {
         idRegistration: "r00002",
@@ -13,6 +14,7 @@ const registrationCourses =
         idCourse: "c00002",
         mark1: 11,
         mark2: 13,
+        gradeTotal: null, 
     },
     {
         idRegistration: "r00003",
@@ -20,6 +22,7 @@ const registrationCourses =
         idCourse: "c00003",
         mark1: 14,
         mark2: 18,
+        gradeTotal: null, 
     },
     {
         idRegistration: "r00001",
@@ -27,6 +30,7 @@ const registrationCourses =
         idCourse: "c00004",
         mark1: 15,
         mark2: 16,
+        gradeTotal: null, 
     }
 ]
 
