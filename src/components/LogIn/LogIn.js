@@ -9,7 +9,7 @@ const LogInForm = ({ successLogin }) => {
     return (
         <div>
             {
-                successLogin  && <Redirect to = "/professor" />
+                successLogin  && <Redirect to = "/courses" />
             }
             <form id='sign_in_form' onSubmit={
                 e => {
