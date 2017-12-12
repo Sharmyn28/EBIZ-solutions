@@ -4,23 +4,30 @@ import SideBar from '../SideBar';
 import TableMarks from "./TableMarks";
 import TableInformation from "./Info";
 import { connect } from 'redux-zero/react';
+import { NavLink, Redirect } from 'react-router-dom';
 
-const Professor = ({ user, teacherClass, successLogin }) => {
+const Professor = ({ user, successLogin }) => {
+    console.log ( "successLogin",  successLogin)
     return (
         <Grid fluid>
-            <Row>
-                <SideBar />
-                <Col lg={8} md={8}></Col>
-                <Col lg={8} md={8}>
-                    <TableInformation user={user} teacherClass={teacherClass}/>
-                    <TableMarks teacherClass={teacherClass} successLogin={successLogin}/>
-                    <Col lgOffset={5} lg={2} md={2}><Button>Guardar Notas</Button></Col> 
-                </Col>
-            </Row>
+         {
+                !successLogin && <Redirect to="/home" />
+            }             
+          <Row>
+             <SideBar />
+             <Col lg={8} md={8}></Col>
+             <Col lg={8} md={8}>
+                 <TableInformation user={user}/>
+                 <TableMarks user={user} />
+                 <Col lgOffset={5} lg={2} md={2}><Button>Guardar Notas</Button></Col> 
+             </Col>
+         </Row>
+
+         }
         </Grid>
     )
 }
 
 //export default Professor;
-const mapToProps = ({ user, teacherClass, successLogin }) => ({ user, teacherClass, successLogin })
+const mapToProps = ({ user, successLogin }) => ({ user, successLogin })
 export default connect(mapToProps)(Professor);

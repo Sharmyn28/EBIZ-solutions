@@ -14,11 +14,11 @@ const initialState =
         email :  null,        
         firstName: null,
         lastName: null,
-        rol: null
+        rol: null,
+        teacherClass: [],
     },
     courses: courses,
     registration: registrationCourses,
-    teacherClass: [],
     currentRol: null,
     //selectedItem: 0
  };

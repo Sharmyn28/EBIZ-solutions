@@ -27,15 +27,20 @@ const TeacherRecord = ({ name, course }) => {
     )
 }
 
-const TableInformation = ({ user, teacherClass }) => {
-    console.log(teacherClass)
-    const id = teacherClass[0].idCourse;
+const TableInformation = ({ user }) => {
+    console.log(user.teacherClass)
+    let id  = null;
+    if (user && user.teacherClass)
+        id = user.teacherClass[0].idCourse;
     return (
         <Col lgOffset={8} mdOffset={8} lg={4} md={4}>
-            <TeacherRecord
-                name={user.lastName + ' ' + user.firstName}
-                course={id}
-            />
+            {
+                id && 
+                <TeacherRecord
+                    name={user.lastName + ' ' + user.firstName}
+                    course={id}
+                />
+            }
         </Col>
     )
 }

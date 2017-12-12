@@ -15,14 +15,14 @@ const StudentRecord = ({ number, name, mark1, mark2, selectedItem }) => {
             <td>{number}</td>
             <td>{name}</td>
             <td><input type='number' placeholder='mark1' defaultValue={mark1} onChange={e => changeMarks(e.target.value, 1, selectedItem)} /></td>
-            <td><input type='number' placeholder='mark1' defaultValue={mark1} onChange={e => changeMarks(e.target.value, 1, selectedItem)} /></td>
+            <td><input type='number' placeholder='mark2' defaultValue={mark2} onChange={e => changeMarks(e.target.value, 2, selectedItem)} /></td>
             <td>{total}</td>
         </tr>
     )
 }
 
-const TableMarks = ({ teacherClass, successLogin }) => {
-    const classMarks = teacherClass.map((e, index) => {
+const TableMarks = ({ user }) => {
+    const classMarks = user.teacherClass.map((e, index) => {
         return (
             <StudentRecord
                 key={index}
@@ -36,9 +36,6 @@ const TableMarks = ({ teacherClass, successLogin }) => {
     })
     return (
         <div>
-            {
-                !successLogin && <Redirect to="/home" />
-            }
             <Col lg={12} md={12}>
                 <Table bordered condensed hover responsive>
                     <thead>
