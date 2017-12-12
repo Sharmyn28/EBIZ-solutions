@@ -1,0 +1,16 @@
+$celeste:rgb(91, 198, 232);
+.container-sanciones{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+.sanciones-text{
+    border: 1px solid $celeste;
+    margin-top:20vh;
+    img{
+        margin-top:2vh;        
+    }
+    p{
+        margin-top:2vh;   
+    }
+}
