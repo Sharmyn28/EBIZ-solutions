@@ -1,16 +1,28 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import styles from '../styles/css/sideBarMenu.css';
 import { Grid, Row, Col, Button,NavItem,Nav,Accordion,Panel} from 'react-bootstrap';
 const SideBar =()=>{ 
     return( 
-    <Col lg={3} md={3} smHidden xsHidden>
+    <Col lg={3} md={3} xs={3} smHidden xsHidden>
         <Accordion className="container-panel">
-        <Panel className="cont-panel" header="Matriculas" eventKey="1">
-            <p >Notas</p>
+        <Panel header="Matriculas" eventKey="1">
+           <NavLink to={"/simulation"}>Simulación de Matricula</NavLink>
         </Panel>
-        <Panel header="Consultas" eventKey="2">
+        <Panel header="Inf.Académica" eventKey="2">          
+            <NavLink to={"/professor"}><p>Consolidado de Notas</p></NavLink>
+            <NavLink to={"/fileData"}>Ficha Académica</NavLink>      
+        </Panel>        
+        <Panel header="Sanciones" eventKey="3">
+        <NavLink to={"/sanciones"}>Detalles</NavLink>
         </Panel>
-        <Panel header="Salir" eventKey="3">
+        <Panel header="Preguntas Frecuentes" eventKey="4">        
+        </Panel>
+        <Panel header="Consultas" eventKey="5">
+        </Panel>
+        <Panel header="Información Personal" eventKey="6">        
+        </Panel>
+        <Panel header="Salir" eventKey="7">
         </Panel>
         </Accordion>
     </Col>
