@@ -3,7 +3,7 @@ import { Grid, Row, Col, Button, Table, ListGroup, ListGroupItem, NavItem, Nav, 
 import { connect } from 'redux-zero/react';
 import { filterCourses } from '../actions/actions';
 import { NavLink, Redirect } from 'react-router-dom';
-import { getTeacherStudents } from "../actions/actions";
+import { getTeacherStudents, signOut } from "../actions/actions";
 
 const SideAdmin = () => {
     return (
@@ -13,11 +13,13 @@ const SideAdmin = () => {
                 <Panel className="cont-panel" header="Matriculas" eventKey="1">
                     <NavLink to={"/simulation"} >Simulación de Matrícula</NavLink>
                 </Panel>
+                <Panel header="Salir" eventKey="7" onClick={signOut}>
+                </Panel>
             </Accordion>
         </Col>
     )
 }
-const CourseAdmin = () => {
+const CourseAdmin = ({successLogin}) => {
 
 
     //let courses = filterCourses();
@@ -28,9 +30,9 @@ const CourseAdmin = () => {
     // });
     return (
         <Grid fluid>
-            {/*
-                !successLogin && <Redirect to="/login" />
-            */}
+            {
+                !successLogin && <Redirect to="/home" />
+            }           
             <Row>
                 <SideAdmin />
                 <Col lg={8} md={8}>
@@ -47,6 +49,5 @@ const CourseAdmin = () => {
     )
 }
 
-export default CourseAdmin;
-//const mapToProps = ({ successLogin }) => ({ successLogin })
-//export default connect(mapToProps)(CourseAdmin);
+const mapToProps = ({ successLogin }) => ({ successLogin })
+export default connect(mapToProps)(CourseAdmin);

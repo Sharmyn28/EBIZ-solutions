@@ -188,7 +188,7 @@ export const getTeacher = (user) => {
     let teacher = users.filter(item => item.email === user)
     console.log("teacher", teacher)
     store.setState({
-        teacher : 
+        user : 
         {
             id: teacher[0].idUser,
             firstName: teacher[0].firstName,
@@ -202,5 +202,14 @@ export const saveCourses = (courses) =>
 {
     store.setState({
         courses : courses,
+    })
+}
+
+export const saveRol = (rol) =>
+{
+    console.log(rol);
+    let newRol = rol;
+    store.setState({
+        currentRol : newRol,
     })
 }
