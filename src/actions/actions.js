@@ -3,7 +3,7 @@ import students from '../store/Students';
 import users from '../store/Users';
 import {auth, database} from './firebase';
 
-export const GrandTotal = (selectedItem) => {
+/*export const GrandTotal = (selectedItem) => {
     //console.log(selectedItem)
     let mark1 = store.getState().registration[selectedItem].mark1;
     let mark2 = store.getState().registration[selectedItem].mark2;
@@ -16,7 +16,7 @@ export const GrandTotal = (selectedItem) => {
         registration: cloneList
     })
     return totalMark;
-}
+}*/
 
 export const getStudentName = (id) => {
     let student = students.filter(e => e.idStudent === id)
