@@ -39,20 +39,20 @@
             "password":"t00004",
             "rol": "teacher"  
         },
-        "szEnMTRNskT081Bx1rOs04Rx0nG5": {
+        "Fm3ikYPwdoXYqDfBDIlskwMt0A93": {
             "idUser": "u00001",
             "firstName": "Jesús",
             "lastName": "Sanchez Sanchez",
             "email": "jesussanchez@institucion.com",
-            "password": "t00004",
+            "password": "u00001",
             "rol": "admin"
         },
-        "szEnMTRNskT081Bx1rOs04Rx0nG8": {
+        "8IwXUWSQrlgsASBCsmiiGYmtZEj1": {
             "idUser": "u00002",
             "firstName": "Melina",
             "lastName": "Flores Flores",
             "email": "melina@institucion.com",
-            "password": "t00004",
+            "password": "u00002",
             "rol": "admin"
         }
     }

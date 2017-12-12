@@ -21,16 +21,25 @@ const courses =
             nameCourse: "Algoritmos"
         },
         {
-            idCourse: "c00006",
-            idTeacher: "t00001",
+            idCourse: "c00005",
+            idTeacher: null,
             nameCourse: "Estructura de datos"
         },
         {
-            idCourse: "c00005",
-            idTeacher: "t00003",
+            idCourse: "c00006",
+            idTeacher: null,
             nameCourse: "Introducción a la lógica"
         },
-        
+        {
+            idCourse: "c00006",
+            idTeacher: null,
+            nameCourse: "Introducción a la lógica"
+        },
+        {
+            idCourse: "c00006",
+            idTeacher: null,
+            nameCourse: "Introducción a la lógica"
+        },
     ]
 
 export default courses;
