@@ -2,6 +2,7 @@ import store from '../store/store';
 import students from '../store/Students';
 import users from '../store/Users';
 import {auth, database} from './firebase';
+import Utils from '../Utils';
 
 /*export const GrandTotal = (selectedItem) => {
     //console.log(selectedItem)
@@ -26,20 +27,30 @@ export const getStudentName = (id) => {
 
 export const changeMarks = (mark, num, selectedItem) => {
     if (num === 1) {
-        const cloneMarks = [...store.getState().teacherClass];
+        const cloneMarks = [...store.getState().user.teacherClass];
         cloneMarks[selectedItem].mark1 = mark; 
         
         store.setState({
-            teacherClass: cloneMarks
+            user:
+            {
+                teacherClass: cloneMarks
+            }
         })
+        Utils.store("state", store.getState());
         //console.log('mark1', mark)
     }else if (num === 2) {
-        const cloneMarks2 = [...store.getState().teacherClass];
+        const cloneMarks2 = [...store.getState().user.teacherClass];
         cloneMarks2[selectedItem].mark2 = mark;
 
         store.setState({
-            teacherClass: cloneMarks2
+            user:
+            {
+                teacherClass: cloneMarks2
+            }
         })
+        console.log(store.getState())
+        Utils.store("state", store.getState());
+        
     }
     //console.log('newmark', mark)
 }
@@ -49,8 +60,13 @@ export const getTeacherStudents = (id) => {
     let students = classes.filter(e => e.idCourse === id)
     console.log('array', students);
     store.setState({
-        teacherClass: students
+        user:
+        {
+            teacherClass: students
+        }
     });
+    Utils.store("state", store.getState());
+    
     //return (student[0].lastName.toUpperCase() + ', ' + student[0].firstName);
 }
 
@@ -155,7 +171,10 @@ auth.onAuthStateChanged(user =>
         database.ref('users/' + user.uid).once('value').then(res => {
             const fullUserInfo = res.val();
         console.log("userRef", userRef)
-        console.log("fullUserInfo", fullUserInfo)        
+        console.log("fullUserInfo", fullUserInfo)  
+        let state = Utils.store("state");
+        console.log(state);
+        // store.setState(state);
         store.setState({
             successLogin : true,
             user: 
@@ -164,9 +183,11 @@ auth.onAuthStateChanged(user =>
                 email :  fullUserInfo.email,
                 firstName :  fullUserInfo.firstName,
                 lastName :  fullUserInfo.lastName,  
-                rol: fullUserInfo.rol
+                rol: fullUserInfo.rol,
+                teacherClass: fullUserInfo.teacherClass
             }
         })
+        Utils.store("state", store.getState());        
     console.log("store auth", store.getState().user)
     
     });
@@ -195,6 +216,7 @@ export const getTeacher = (user) => {
             lastName: teacher[0].lastName,
         }
     })
+    Utils.store("state", store.getState());    
     console.log("store teacher", store.getState().user)
 }
 
@@ -211,5 +233,6 @@ export const saveRol = (rol) =>
     let newRol = rol;
     store.setState({
         currentRol : newRol,
-    })
+    });
+    Utils.store("state", store.getState());    
 }
