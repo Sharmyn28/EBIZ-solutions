@@ -1,15 +1,16 @@
 import React from 'react';
 import { NavLink, Redirect } from 'react-router-dom';
 //import { connect } from 'redux-zero/react';
-//import { LogIn } from '../actions/actions';
+import { signIn, readTeachers } from '../../actions/actions';
 import { Grid, Row, Col, Button } from 'react-bootstrap';
 
 const LogInForm = () => {
+    readTeachers();
     return (
         <form id='sign_in_form' onSubmit={
             e => {
                 e.preventDefault();
-                //signIn(this.userInputRef.value, this.passwordInputRef.value)
+                signIn(this.userInputRef.value, this.passwordInputRef.value)
             }
         }>
             <div className='field'>
