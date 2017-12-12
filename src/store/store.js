@@ -2,7 +2,7 @@ import createStore from 'redux-zero';
 import students from "./Students";
 import registrationCourses from "./RegistrationCourses";
 import teacher from "./Teachers";
-import course from "./Courses";
+import courses from "./Courses";
 import { GrandTotal } from '../actions/actions';
 
 const initialState = 
@@ -10,10 +10,12 @@ const initialState =
     successLogin : false,    
     teacher: 
     {
-        id: teacher[0].idTeacher,
-        firstName: teacher[0].firstName,
-        lastName: teacher[0].lastName,
+        id: null,
+        email :  null,        
+        firstName: null,
+        lastName: null,
     },
+    courses: courses,
     registration: registrationCourses,
     //selectedItem: 0
  };
