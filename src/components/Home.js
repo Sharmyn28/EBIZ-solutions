@@ -12,7 +12,7 @@ const Home = () => {
         </Col>
         <Col md={12} xs={12}>
             <Button><NavLink to={'/login'}>Profesor</NavLink></Button>
-            <Button>Alumno</Button>
+            <Button><NavLink to={'/home'}>Alumno</NavLink></Button>
             <Button><NavLink to={'/login'}>Admin</NavLink></Button>
         </Col>
         </Row>
