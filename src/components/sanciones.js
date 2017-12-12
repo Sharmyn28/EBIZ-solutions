@@ -7,7 +7,7 @@ const Sanciones = () => {
     return(
         <div>
             <SideBar/>
-            <Row md={6} >
+            <Row className="container">
                 <Col md={6}>
                     <p>Sanciones</p>
                 </Col>

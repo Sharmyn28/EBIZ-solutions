@@ -10,7 +10,6 @@ import { connect } from 'redux-zero/react';
 const StudentRecord = ({ number, name, mark1, mark2, selectedItem }) => {
     let total = (parseInt(mark1) + parseInt(mark2)) / 2;
     //console.log(mark1 + ' ' + mark2);
-
     return (
         <tr>
             <td>{number}</td>
@@ -61,7 +60,6 @@ const TableMarks = ({ teacherClass, successLogin }) => {
         </div>
     )
 }
-
 
 export default TableMarks;
 //const mapToProps = ({ successLogin }) => ({ successLogin })

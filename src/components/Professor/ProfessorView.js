@@ -10,6 +10,7 @@ const Professor = ({ teacher, teacherClass, successLogin }) => {
         <Grid fluid>
             <Row>
                 <SideBar />
+                <Col lg={8} md={8}></Col>
                 <Col lg={8} md={8}>
                     <TableInformation teacher={teacher} teacherClass={teacherClass}/>
                     <TableMarks teacherClass={teacherClass} successLogin={successLogin}/>

@@ -6,10 +6,11 @@ import {signOut} from '../actions/actions';
 
 const SideBar =()=>{ 
     return( 
-    <Col lg={3} md={3} xs={3} smHidden xsHidden>
+    <Col className="cont-sidebar" lg={3} md={3} xs={3} smHidden xsHidden>
+        <img  width="70%" src="https://upload.wikimedia.org/wikipedia/commons/0/05/Logosimbolo_Universidad_de_La_Salle.png"/>
         <Accordion className="container-panel">
-        <Panel header="Matriculas" eventKey="1">
-           <NavLink to={"/simulation"}>Simulación de Matricula</NavLink>
+        <Panel className="cont-panel" header="Matriculas" eventKey="1">
+           <NavLink to={"/simulation"} >Simulación de Matrícula</NavLink>
         </Panel>
         <Panel header="Inf.Académica" eventKey="2">          
             <NavLink to={"/professor"}><p>Consolidado de Notas</p></NavLink>

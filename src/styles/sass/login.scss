@@ -1,0 +1,35 @@
+$celeste:rgb(91, 198, 232);
+#sign_in_form { 
+// background-color: $celeste;
+// height: 100vh;
+img{
+    margin-bottom: 15px;
+}
+margin-top: 10%;
+input{
+    margin-top: 10px;
+    width: 20%;    
+}
+button{
+    margin-top: 10px;
+}
+}
+.field { 
+   input{
+    border: 2px solid $celeste;
+    height: 6vh;
+    } 
+    
+span{
+    border: 5px solid $celeste;     
+}
+}
+
+.btn-default{
+    border: 1.5px solid $celeste !important;        
+    background: transparent !important;
+}
+.btn{
+    border-radius: 0px;
+}
+
