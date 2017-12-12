@@ -5,12 +5,13 @@ import { connect } from 'redux-zero/react';
 import { signIn, readUsers } from '../../actions/actions';
 import { Grid, Row, Col, Button } from 'react-bootstrap';
 
-const LogInForm = ({ successLogin }) => {
+const LogInForm = ({ successLogin, currentRol }) => {
     readUsers();
+    console.log("currentRol",currentRol)    
     return (
       <div>
             {
-                successLogin  && <Redirect to = "/courses" />
+                successLogin && ((currentRol=="teacher") ? <Redirect to = "/courses"/> : <Redirect to = "/courseAdmin" />)
             }
           <form align="center" id='sign_in_form' onSubmit={
               e => {
@@ -33,7 +34,7 @@ const LogInForm = ({ successLogin }) => {
     )
 }
 
-const LogIn = ({ successLogin }) => {
+const LogIn = ({ successLogin, currentRol }) => {
     return (
         <div>
             <div className=''>
@@ -43,7 +44,7 @@ const LogIn = ({ successLogin }) => {
                             <header >
                                 <div className='logo'></div>
                             </header>
-                            <LogInForm successLogin={ successLogin }/>
+                            <LogInForm successLogin={ successLogin } currentRol={currentRol}/>
                         </main>
                     </div>
                 </main>
@@ -52,5 +53,5 @@ const LogIn = ({ successLogin }) => {
     )
 }
 
-const mapToProps = ({ successLogin }) => ({ successLogin })
+const mapToProps = ({ successLogin, currentRol }) => ({ successLogin, currentRol })
 export default connect(mapToProps)(LogIn);

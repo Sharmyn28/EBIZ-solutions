@@ -19,6 +19,7 @@ const initialState =
     courses: courses,
     registration: registrationCourses,
     teacherClass: [],
+    currentRol: null,
     //selectedItem: 0
  };
  

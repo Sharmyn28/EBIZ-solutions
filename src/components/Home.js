@@ -1,7 +1,7 @@
 import React from 'react';
-import '../styles/css/home.css'
-import {NavLink} from 'react-router-dom'
-import { Button , Row, Col } from 'react-bootstrap';
+import '../styles/css/home.css';
+import {NavLink} from 'react-router-dom';
+import { Button , Row, Col } from 'react-bootstrap'
 
 const Home = () => {
     return(
