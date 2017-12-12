@@ -9,7 +9,7 @@ const Home = () => {
 
             <Button><NavLink to={'/login'}> Profesor</NavLink></Button>
             <Button>Alumno</Button>
-            <Button>/Familia</Button>
+            <Button>/<NavLink to={'/login'}> Admin</NavLink></Button>
         </div>
     )
 }
