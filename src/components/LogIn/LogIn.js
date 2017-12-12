@@ -2,11 +2,11 @@ import React from 'react';
 import { NavLink, Redirect } from 'react-router-dom';
 import  '../../styles/css/login.css';
 import { connect } from 'redux-zero/react';
-import { signIn, readTeachers } from '../../actions/actions';
+import { signIn, readUsers } from '../../actions/actions';
 import { Grid, Row, Col, Button } from 'react-bootstrap';
 
 const LogInForm = ({ successLogin }) => {
-    readTeachers();
+    readUsers();
     return (
       <div>
             {

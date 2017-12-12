@@ -1,7 +1,7 @@
-const teachers =
+const users =
     [
         {
-            "iduser": "t00001",
+            "idUser": "t00001",
             "firstName": "Luz",
             "lastName": "Rodriguez rodriguez",
             "email": "luzrodriguez@institucion.com",
@@ -9,7 +9,7 @@ const teachers =
             "rol": "teacher"
         },
         {
-            "iduser": "t00002",
+            "idUser": "t00002",
             "firstName": "Raúl",
             "lastName": "Perez Sarmiento",
             "email": "raulperez@institucion.com",
@@ -18,7 +18,7 @@ const teachers =
 
         },
         {
-            "iduser": "t00003",
+            "idUser": "t00003",
             "firstName": "Sofia",
             "lastName": "Palomino Guevara",
             "email": "sofiapalomino@institucion.com",
@@ -27,7 +27,7 @@ const teachers =
 
         },
         {
-            "iduser": "t00004",
+            "idUser": "t00004",
             "firstName": "Jesús",
             "lastName": "Altamirano Flores",
             "email": "jesusaltamirano@institucion.com",
@@ -35,7 +35,7 @@ const teachers =
             "rol": "teacher"
         },
         {
-            "iduser": "u00001",
+            "idUser": "u00001",
             "firstName": "Jesús",
             "lastName": "Sanchez Sanchez",
             "email": "jesussanchez@institucion.com",
@@ -43,7 +43,7 @@ const teachers =
             "rol": "admin"
         },
         {
-            "iduser": "u00002",
+            "idUser": "u00002",
             "firstName": "Melina",
             "lastName": "Flores Flores",
             "email": "melina@institucion.com",
@@ -51,4 +51,4 @@ const teachers =
             "rol": "admin"
         }
     ]
-export default teachers;
+export default users;
