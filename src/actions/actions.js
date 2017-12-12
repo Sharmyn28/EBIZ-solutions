@@ -3,7 +3,7 @@ import students from '../store/Students';
 import teachers from '../store/Teachers';
 import {auth, database} from './firebase';
 
-export const GrandTotal = (selectedItem) => {
+/*export const GrandTotal = (selectedItem) => {
     //console.log(selectedItem)
     let mark1 = store.getState().registration[selectedItem].mark1;
     let mark2 = store.getState().registration[selectedItem].mark2;
@@ -16,7 +16,7 @@ export const GrandTotal = (selectedItem) => {
         registration: cloneList
     })
     return totalMark;
-}
+}*/
 
 export const getStudentName = (id) => {
     let student = students.filter(e => e.idStudent === id)
@@ -26,19 +26,19 @@ export const getStudentName = (id) => {
 
 export const changeMarks = (mark, num, selectedItem) => {
     if (num === 1) {
-        const cloneMarks = [...store.getState().registration];
+        const cloneMarks = [...store.getState().teacherClass];
         cloneMarks[selectedItem].mark1 = mark; 
         
         store.setState({
-            registration: cloneMarks
+            teacherClass: cloneMarks
         })
         //console.log('mark1', mark)
     }else if (num === 2) {
-        const cloneMarks2 = [...store.getState().registration];
+        const cloneMarks2 = [...store.getState().teacherClass];
         cloneMarks2[selectedItem].mark2 = mark;
 
         store.setState({
-            registration: cloneMarks2
+            teacherClass: cloneMarks2
         })
     }
     //console.log('newmark', mark)
